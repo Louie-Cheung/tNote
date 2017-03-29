@@ -1,0 +1,39 @@
+git安装成功后的配置，以及本地代码的提交
+1，在全局设置用户名作为提交时的名字，其中--global是全局的，其实写在固定的文件中
+	git config --global user.name "louie-cheung" 
+设置邮箱
+	git config --global user.emai "tianwen9002@163.com" 
+	...
+2，查看所有配置的信息
+	git config --list
+	查看某一个特定的信息
+	git config user.name
+3，在一个目录下创建repository
+	例如在 D盘下创建 my_repository 作为
+	git init 进行初始化 ，该初始化会创建一系列标配文件
+4，关于在github上提交
+	首先具有github账号，在上面创建一个仓库
+	举例说明，仓库名字为origin，在git上通过下一行代码创建 README.md文件
+	echo "# origin" >> README.md
+	进行初始化 
+	git init
+	将README.md添加到仓库里，是在本地但是尚未提交，不知这样的理解是否有误？
+	git add README.md
+	进行提交，并且标注提交的信息
+	git commit -m "first commit"
+	第一次提交时需要指定仓库名字，这里是origin和仓库的链接地址
+	git remote add origin https://github.com/Louie-Cheung/origin.git
+	然后以流的方式向仓库进行push提交，这是从客户端到服务器端的，如果是pull则是从服务器端拉取；提交到的是以master方式；注意如果已经提交过了，第二次不需要上一步指定链接，直接执行下面的带仓库名的方式就可以了。
+	git push -u origin master
+	
+备注：关于参考资料
+git书籍推荐
+http://blog.csdn.net/melodyfantasy/article/details/44996679
+git软件下载
+https://git-for-windows.github.io/
+关于git的官方文档（看文档还是看官方较为标准）
+https://git-scm.com/doc
+github上的hello-world指导教程
+https://guides.github.com/activities/hello-world/
+
+20170329于郑州大学
